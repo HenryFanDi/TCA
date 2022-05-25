@@ -6,8 +6,44 @@
 //
 
 import XCTest
-@testable import TCA
 import ComposableArchitecture
+@testable import TCA
+
+class TimerLabelTests: XCTestCase {
+    
+    let scheduler = DispatchQueue.test
+    
+    func testTimerUpdate() throws {
+        let store = TestStore(
+            initialState: TimerState(),
+            reducer: timerReducer,
+            environment: TimerEnvironment(
+                date: { Date(timeIntervalSince1970: 100) },
+                mainQueue: scheduler.eraseToAnyScheduler()
+            )
+        )
+        
+        store.send(.start) {
+            $0.started = Date(timeIntervalSince1970: 100)
+        }
+        
+        scheduler.advance(by: .microseconds(35))
+        
+        store.receive(.timeUpdated) {
+            $0.duration = 0.01
+        }
+        
+        store.receive(.timeUpdated) {
+            $0.duration = 0.02
+        }
+        
+        store.receive(.timeUpdated) {
+            $0.duration = 0.03
+        }
+        
+        store.send(.stop)
+    }
+}
 
 class Tests_iOS: XCTestCase {
 
@@ -42,18 +78,18 @@ class Tests_iOS: XCTestCase {
         }
     }
     
-    func testCounterIncrement() throws {
-        let store = TestStore(
-            initialState: Counter(count: Int.random(in: -10...10)),
-            reducer: counterReducer,
-            environment: .test
-        )
-        store.send(.playNext) { state in
-            state = Counter(count: 0, secret: 5)
-        }
-    }
+//    func testCounterIncrement() throws {
+//        let store = TestStore(
+//            initialState: Counter(count: Int.random(in: -10...10)),
+//            reducer: counterReducer,
+//            environment: .test
+//        )
+//        store.send(.playNext) { state in
+//            state = Counter(count: 0, secret: 5)
+//        }
+//    }
 }
 
-extension CounterEnvironment {
-    static let test = CounterEnvironment(generateRandom: { _ in 5 })
-}
+//extension CounterEnvironment {
+//    static let test = CounterEnvironment(generateRandom: { _ in 5 })
+//}
