@@ -45,6 +45,29 @@ class TimerLabelTests: XCTestCase {
     }
 }
 
+class SampleTextTests: XCTestCase {
+    
+    func testSampleTextRequest() throws {
+        let store = TestStore(
+            initialState: SampleTextState(loading: false, text: ""),
+            reducer: sampleTextReducer,
+            environment: SampleTextEnvironment(
+                // 1
+                loadText: { Effect(value: "Hello World") },
+                mainQueue: .immediate
+            )
+        )
+        store.send(.load) { state in
+            state.loading = true
+        }
+        // 2
+        store.receive(.loaded(.success("Hello World"))) { state in
+            state.loading = false
+            state.text = "Hello World"
+        }
+    }
+}
+
 class Tests_iOS: XCTestCase {
 
     override func setUpWithError() throws {

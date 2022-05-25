@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 import ComposableArchitecture
 
 struct Counter: Equatable, Identifiable {
@@ -213,6 +214,76 @@ struct TimerLabelView_Previews: PreviewProvider {
                         Button("Start") { viewStore.send(.start) }
                         Button("Stop") { viewStore.send(.stop) }
                     }.padding()
+                }
+            }
+        }
+    }
+}
+
+// MARK: -
+
+let sampleRequest = URLSession.shared
+    .dataTaskPublisher(for: URL(string: "https://example.com")!)
+    .map { element -> String in
+        return String(data: element.data, encoding: .utf8) ?? ""
+    }
+
+struct SampleTextEnvironment {
+    var loadText: () -> Effect<String, URLError>
+    var mainQueue: AnySchedulerOf<DispatchQueue>
+    
+    static let live = SampleTextEnvironment(
+        loadText: { sampleRequest.eraseToEffect() },
+        mainQueue: .main
+    )
+}
+
+enum SampleTextAction: Equatable {
+    case load
+    case loaded(Result<String, URLError>)
+}
+
+struct SampleTextState: Equatable {
+    var loading: Bool
+    var text: String
+}
+
+let sampleTextReducer = Reducer<SampleTextState, SampleTextAction, SampleTextEnvironment> { state, action, environment in
+    switch action {
+    case .load:
+        state.loading = true
+        return environment.loadText()
+            .receive(on: environment.mainQueue)
+            .catchToEffect(SampleTextAction.loaded)
+        
+//        return environment.loadText()
+//            .receive(on: environment.mainQueue)
+//            .catchToEffect { result in
+//                return SampleTextAction.loaded(result)
+//            }
+    case .loaded(let result):
+        state.loading = false
+        do {
+            state.text = try result.get()
+        } catch {
+            state.text = "Error: \(error)"
+        }
+        return .none
+    }
+}
+
+struct SampleTextView: View {
+    let store: Store<SampleTextState, SampleTextAction>
+    
+    var body: some View {
+        WithViewStore(store) { viewStore in
+            ZStack {
+                VStack {
+                    Button("Load") { viewStore.send(.load) }
+                    Text(viewStore.text)
+                }
+                if viewStore.loading {
+                    ProgressView().progressViewStyle(.circular)
                 }
             }
         }
