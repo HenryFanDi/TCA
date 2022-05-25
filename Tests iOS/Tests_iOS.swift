@@ -6,6 +6,8 @@
 //
 
 import XCTest
+@testable import TCA
+import ComposableArchitecture
 
 class Tests_iOS: XCTestCase {
 
@@ -39,4 +41,19 @@ class Tests_iOS: XCTestCase {
             }
         }
     }
+    
+    func testCounterIncrement() throws {
+        let store = TestStore(
+            initialState: Counter(count: Int.random(in: -10...10)),
+            reducer: counterReducer,
+            environment: .test
+        )
+        store.send(.playNext) { state in
+            state = Counter(count: 0, secret: 5)
+        }
+    }
+}
+
+extension CounterEnvironment {
+    static let test = CounterEnvironment(generateRandom: { _ in 5 })
 }
