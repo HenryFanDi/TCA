@@ -199,22 +199,83 @@ struct TimerLabelView: View {
                     systemImage: "timer"
                 )
             }
+            .onAppear { viewStore.send(.start) }
         }
     }
 }
 
-struct TimerLabelView_Previews: PreviewProvider {
-    static let store = Store(initialState: .init(), reducer: timerReducer, environment: .live)
-    static var previews: some View {
+//struct TimerLabelView_Previews: PreviewProvider {
+//    static let store = Store(initialState: .init(), reducer: timerReducer, environment: .live)
+//    static var previews: some View {
+//        VStack {
+//            WithViewStore(store) { viewStore in
+//                VStack {
+//                    TimerLabelView(store: store)
+//                    HStack {
+//                        Button("Start") { viewStore.send(.start) }
+//                        Button("Stop") { viewStore.send(.stop) }
+//                    }.padding()
+//                }
+//            }
+//        }
+//    }
+//}
+
+// MARK: -
+
+struct GameResult: Equatable {
+    let secret: Int
+    let guess: Int
+    let timeSpent: TimeInterval
+}
+
+struct GameState: Equatable {
+    var counter: Counter = .init()
+    var timer: TimerState = .init()
+    var results: [GameResult] = []
+}
+
+enum GameAction {
+    case counter(CounterAction)
+    case timer(TimerAction)
+}
+
+struct GameEnvironment { }
+
+let gameReducer = Reducer<GameState, GameAction, GameEnvironment>.combine(
+    counterReducer.pullback(
+        state: \.counter,
+        action: /GameAction.counter,
+        environment: { _ in .live }
+    ),
+    timerReducer.pullback(
+        state: \.timer,
+        action: /GameAction.timer,
+        environment: { _ in .live }
+    )
+)
+
+//struct Reducer<State, Action, Environment> {
+//    func pullback<GlobalState, GlobalAction, GlobalEnvironment>(
+//        state toLocalState: WritableKeyPath<GlobalState, State>,
+//        action toLocalAction: CasePath<GlobalAction, Action>,
+//        environment toLocalEnvironment: @escaping (GlobalEnvironment) -> Environment
+//    ) -> Reducer<GlobalState, GlobalAction, GlobalEnvironment>
+//
+//    // ...
+//}
+
+struct GameView: View {
+    let store: Store<GameState, GameAction>
+    
+    var body: some View {
         VStack {
-            WithViewStore(store) { viewStore in
-                VStack {
-                    TimerLabelView(store: store)
-                    HStack {
-                        Button("Start") { viewStore.send(.start) }
-                        Button("Stop") { viewStore.send(.stop) }
-                    }.padding()
-                }
+            TimerLabelView(store: store.scope(state: \.timer, action: GameAction.timer))
+            CounterView(store: store.scope(state: \.counter, action: GameAction.counter))
+            
+            WithViewStore(store.stateless) { viewStore in
+                Color.clear
+                    .frame(width: 0, height: 0)
             }
         }
     }
@@ -325,11 +386,11 @@ struct MyView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CounterView(
+        GameView(
             store: Store(
-                initialState: Counter(),
-                reducer: counterReducer,
-                environment: .live
+                initialState: GameState(),
+                reducer: gameReducer,
+                environment: GameEnvironment()
             )
         )
     }
