@@ -141,7 +141,7 @@ struct ContentView_Previews: PreviewProvider {
             store: Store(
                 initialState: GameState(),
                 reducer: gameReducer,
-                environment: GameEnvironment()
+                environment: .live
             )
         )
     }

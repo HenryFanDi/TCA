@@ -12,10 +12,10 @@ import ComposableArchitecture
 struct TCAApp: App {
     var body: some Scene {
         WindowGroup {
-            CounterView(
+            GameView(
                 store: Store(
-                    initialState: Counter(),
-                    reducer: counterReducer,
+                    initialState: GameState(),
+                    reducer: gameReducer,
                     environment: .live
                 )
             )
