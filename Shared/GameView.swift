@@ -8,25 +8,26 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct GameResult: Equatable {
-    let secret: Int
-    let guess: Int
+struct GameResult: Equatable, Identifiable {
+    let counter: Counter
     let timeSpent: TimeInterval
     
-    var correct: Bool { secret == guess }
+    var correct: Bool { counter.secret == counter.count }
+    var id: UUID { counter.id }
 }
 
 struct GameState: Equatable {
     var counter: Counter = .init()
     var timer: TimerState = .init()
     
-    var results: [GameResult] = []
+    var results = IdentifiedArrayOf<GameResult>()
     var lastTimestamp = 0.0
 }
 
 enum GameAction {
     case counter(CounterAction)
     case timer(TimerAction)
+    case listResult(GameResultListAction)
 }
 
 struct GameEnvironment {
@@ -47,7 +48,10 @@ let gameReducer = Reducer<GameState, GameAction, GameEnvironment>.combine(
     .init { state, action, environment in
         switch action {
         case .counter(.playNext):
-            let result = GameResult(secret: state.counter.secret, guess: state.counter.count, timeSpent: state.timer.duration - state.lastTimestamp)
+            let result = GameResult(
+                counter: state.counter,
+                timeSpent: state.timer.duration - state.lastTimestamp
+            )
             state.results.append(result)
             state.lastTimestamp = state.timer.duration
             return .none
@@ -64,6 +68,11 @@ let gameReducer = Reducer<GameState, GameAction, GameEnvironment>.combine(
         state: \.timer,
         action: /GameAction.timer,
         environment: { _ in .live }
+    ),
+    gameResultListReducer.pullback(
+        state: \.results,
+        action: /GameAction.listResult,
+        environment: { _ in .init() }
     )
 )
 
@@ -82,12 +91,18 @@ struct GameView: View {
     var body: some View {
         WithViewStore(store.scope(state: \.results)) { viewStore in
             VStack {
-                resultLabel(viewStore.state)
+                resultLabel(viewStore.state.elements)
                 Divider()
                 TimerLabelView(store: store.scope(state: \.timer, action: GameAction.timer))
                 CounterView(store: store.scope(state: \.counter, action: GameAction.counter))
             }.onAppear {
                 viewStore.send(.timer(.start))
+            }
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                NavigationLink("Detail") {
+                    GameResultListView(store: store.scope(state: \.results, action: GameAction.listResult))
+                }
             }
         }
     }

@@ -12,13 +12,15 @@ import ComposableArchitecture
 struct TCAApp: App {
     var body: some Scene {
         WindowGroup {
-            GameView(
-                store: Store(
-                    initialState: GameState(),
-                    reducer: gameReducer,
-                    environment: .live
+            NavigationView {
+                GameView(
+                    store: Store(
+                        initialState: GameState(),
+                        reducer: gameReducer,
+                        environment: .live
+                    )
                 )
-            )
+            }
         }
     }
 }
