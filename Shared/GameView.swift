@@ -8,6 +8,8 @@
 import SwiftUI
 import ComposableArchitecture
 
+let resultListStateTag = UUID()
+
 struct GameResult: Equatable, Identifiable {
     let counter: Counter
     let timeSpent: TimeInterval
@@ -22,12 +24,15 @@ struct GameState: Equatable {
     
     var results = IdentifiedArrayOf<GameResult>()
     var lastTimestamp = 0.0
+    
+    var resultListState: Identified<UUID, GameResultListState>?
 }
 
 enum GameAction {
     case counter(CounterAction)
     case timer(TimerAction)
     case listResult(GameResultListAction)
+    case setNavigation(UUID?)
 }
 
 struct GameEnvironment {
@@ -55,6 +60,13 @@ let gameReducer = Reducer<GameState, GameAction, GameEnvironment>.combine(
             state.results.append(result)
             state.lastTimestamp = state.timer.duration
             return .none
+        case .setNavigation(.some(let id)):
+            state.resultListState = .init(state.results, id: id)
+            return .none
+        case .setNavigation(.none):
+            state.results = state.resultListState?.value ?? []
+            state.resultListState = nil
+            return .none
         default:
             return .none
         }
@@ -69,11 +81,18 @@ let gameReducer = Reducer<GameState, GameAction, GameEnvironment>.combine(
         action: /GameAction.timer,
         environment: { _ in .live }
     ),
-    gameResultListReducer.pullback(
-        state: \.results,
-        action: /GameAction.listResult,
-        environment: { _ in .init() }
-    )
+    gameResultListReducer
+        .pullback(
+            state: \Identified.value,
+            action: .self,
+            environment: { $0 }
+        )
+        .optional()
+        .pullback(
+            state: \.resultListState,
+            action: /GameAction.listResult,
+            environment: { _ in .init() }
+        )
 )
 
 //struct Reducer<State, Action, Environment> {
@@ -85,6 +104,23 @@ let gameReducer = Reducer<GameState, GameAction, GameEnvironment>.combine(
 //
 //    // ...
 //}
+
+// MARK: -
+
+let sample: GameResultListState = [
+    .init(counter: .init(count: 10, secret: 10, id: .init()), timeSpent: 100),
+    .init(counter: .init(), timeSpent: 100)
+]
+
+let testState = GameState(
+    counter: .init(),
+    timer: .init(),
+    results: sample,
+    lastTimestamp: 100,
+    resultListState: .init(sample, id: resultListStateTag)
+)
+
+// MARK: -
 
 struct GameView: View {
     let store: Store<GameState, GameAction>
@@ -100,8 +136,18 @@ struct GameView: View {
             }
         }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink("Detail") {
-                    GameResultListView(store: store.scope(state: \.results, action: GameAction.listResult))
+                WithViewStore(store) { viewStore in
+                    NavigationLink(
+                        "Detail",
+                        tag: resultListStateTag,
+                        selection: viewStore.binding(get: \.resultListState?.id, send: GameAction.setNavigation),
+                        destination: {
+                            IfLetStore(
+                                store.scope(state: \.resultListState?.value, action: GameAction.listResult),
+                                then: { GameResultListView(store: $0) }
+                            )
+                        }
+                    )
                 }
             }
         }

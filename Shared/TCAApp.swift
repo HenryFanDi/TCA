@@ -15,7 +15,7 @@ struct TCAApp: App {
             NavigationView {
                 GameView(
                     store: Store(
-                        initialState: GameState(),
+                        initialState: testState,
                         reducer: gameReducer,
                         environment: .live
                     )
