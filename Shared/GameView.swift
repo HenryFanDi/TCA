@@ -26,6 +26,9 @@ struct GameState: Equatable {
     var lastTimestamp = 0.0
     
     var resultListState: Identified<UUID, GameResultListState>?
+    var alert: AlertState<GameAlertAction>?
+    
+    var savingResults: Bool = false
 }
 
 enum GameAction {
@@ -33,6 +36,8 @@ enum GameAction {
     case timer(TimerAction)
     case listResult(GameResultListAction)
     case setNavigation(UUID?)
+    case alertAction(GameAlertAction)
+    case saveResult(Result<Void, URLError>)
 }
 
 struct GameEnvironment {
@@ -64,6 +69,29 @@ let gameReducer = Reducer<GameState, GameAction, GameEnvironment>.combine(
             state.resultListState = .init(state.results, id: id)
             return .none
         case .setNavigation(.none):
+            if state.resultListState?.value != state.results {
+                state.alert = .init(
+                    title: .init("Save Changes?"),
+                    primaryButton: .default(.init("OK"), action: .send(.alertSaveButtonTapped)),
+                    secondaryButton: .cancel(.init("Cancel"), action: .send(.alertCancelButtonTapped))
+                )
+            } else {
+                state.resultListState = nil
+            }
+            return .none
+        case .alertAction(.alertDismiss):
+            state.alert = nil
+            return .none
+        case .alertAction(.alertSaveButtonTapped):
+            state.savingResults = true
+            return Effect(value: .saveResult(.success(())))
+                .delay(for: 2, scheduler: environment.mainQueue)
+                .eraseToEffect()
+        case .alertAction(.alertCancelButtonTapped):
+            state.resultListState = nil
+            return .none
+        case .saveResult(let result):
+            state.savingResults = false
             state.results = state.resultListState?.value ?? []
             state.resultListState = nil
             return .none
@@ -107,6 +135,14 @@ let gameReducer = Reducer<GameState, GameAction, GameEnvironment>.combine(
 
 // MARK: -
 
+enum GameAlertAction: Equatable {
+    case alertSaveButtonTapped
+    case alertCancelButtonTapped
+    case alertDismiss
+}
+
+// MARK: -
+
 let sample: GameResultListState = [
     .init(counter: .init(count: 10, secret: 10, id: .init()), timeSpent: 100),
     .init(counter: .init(), timeSpent: 100)
@@ -138,7 +174,6 @@ struct GameView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 WithViewStore(store) { viewStore in
                     NavigationLink(
-                        "Detail",
                         tag: resultListStateTag,
                         selection: viewStore.binding(get: \.resultListState?.id, send: GameAction.setNavigation),
                         destination: {
@@ -146,11 +181,21 @@ struct GameView: View {
                                 store.scope(state: \.resultListState?.value, action: GameAction.listResult),
                                 then: { GameResultListView(store: $0) }
                             )
+                        },
+                        label: {
+                            if viewStore.savingResults {
+                                ProgressView()
+                            } else {
+                                Text("Detail")
+                            }
                         }
                     )
                 }
             }
-        }
+        }.alert (
+            store.scope(state: \.alert, action: GameAction.alertAction),
+            dismiss: .alertDismiss
+        )
     }
     
     func resultLabel(_ results: [GameResult]) -> some View {
