@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D837772F2851BFF5003229A3 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837772E2851BFF5003229A3 /* CalculatorView.swift */; };
+		D83777302851BFF5003229A3 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837772E2851BFF5003229A3 /* CalculatorView.swift */; };
+		D83777332851C542003229A3 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83777322851C542003229A3 /* CalculatorButton.swift */; };
+		D83777342851C543003229A3 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83777322851C542003229A3 /* CalculatorButton.swift */; };
+		D83777362851C785003229A3 /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83777352851C785003229A3 /* CalculatorButtonItem.swift */; };
+		D83777372851C785003229A3 /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83777352851C785003229A3 /* CalculatorButtonItem.swift */; };
+		D83777392851C9E1003229A3 /* CalculatorButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83777382851C9E1003229A3 /* CalculatorButtonRow.swift */; };
+		D837773A2851C9E1003229A3 /* CalculatorButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83777382851C9E1003229A3 /* CalculatorButtonRow.swift */; };
+		D837773C2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837773B2851CCBF003229A3 /* CalculatorButtonPad.swift */; };
+		D837773D2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837773B2851CCBF003229A3 /* CalculatorButtonPad.swift */; };
 		D8C4CA012846052100A8F24F /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C4CA002846052000A8F24F /* CounterView.swift */; };
 		D8C4CA022846052100A8F24F /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C4CA002846052000A8F24F /* CounterView.swift */; };
 		D8C4CA04284605B800A8F24F /* TimerLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C4CA03284605B800A8F24F /* TimerLabelView.swift */; };
@@ -48,6 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D837772E2851BFF5003229A3 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		D83777322851C542003229A3 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		D83777352851C785003229A3 /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
+		D83777382851C9E1003229A3 /* CalculatorButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonRow.swift; sourceTree = "<group>"; };
+		D837773B2851CCBF003229A3 /* CalculatorButtonPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonPad.swift; sourceTree = "<group>"; };
 		D8C4CA002846052000A8F24F /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		D8C4CA03284605B800A8F24F /* TimerLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLabelView.swift; sourceTree = "<group>"; };
 		D8C4CA062846063D00A8F24F /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -100,6 +115,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D83777312851C52D003229A3 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				D837772E2851BFF5003229A3 /* CalculatorView.swift */,
+				D83777322851C542003229A3 /* CalculatorButton.swift */,
+				D83777352851C785003229A3 /* CalculatorButtonItem.swift */,
+				D83777382851C9E1003229A3 /* CalculatorButtonRow.swift */,
+				D837773B2851CCBF003229A3 /* CalculatorButtonPad.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
 		D8C9903A283773FB000CB0D2 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +141,7 @@
 		D8C9903F283773FC000CB0D2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D83777312851C52D003229A3 /* Calculator */,
 				D8C99040283773FC000CB0D2 /* TCAApp.swift */,
 				D8C4CA002846052000A8F24F /* CounterView.swift */,
 				D8C4CA03284605B800A8F24F /* TimerLabelView.swift */,
@@ -328,12 +356,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C4CA0D2846071000A8F24F /* MyView.swift in Sources */,
+				D83777332851C542003229A3 /* CalculatorButton.swift in Sources */,
+				D83777362851C785003229A3 /* CalculatorButtonItem.swift in Sources */,
 				D8C9906828377400000CB0D2 /* TCAApp.swift in Sources */,
+				D83777392851C9E1003229A3 /* CalculatorButtonRow.swift in Sources */,
 				D8C4CA012846052100A8F24F /* CounterView.swift in Sources */,
 				D8C4CA04284605B800A8F24F /* TimerLabelView.swift in Sources */,
 				D8C4CA1028460FE500A8F24F /* GameResultListView.swift in Sources */,
+				D837772F2851BFF5003229A3 /* CalculatorView.swift in Sources */,
 				D8C4CA072846063D00A8F24F /* GameView.swift in Sources */,
 				D8C4CA0A284606C000A8F24F /* SampleTextView.swift in Sources */,
+				D837773C2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,12 +375,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C4CA0E2846071000A8F24F /* MyView.swift in Sources */,
+				D83777342851C543003229A3 /* CalculatorButton.swift in Sources */,
+				D83777372851C785003229A3 /* CalculatorButtonItem.swift in Sources */,
 				D8C9906928377400000CB0D2 /* TCAApp.swift in Sources */,
+				D837773A2851C9E1003229A3 /* CalculatorButtonRow.swift in Sources */,
 				D8C4CA022846052100A8F24F /* CounterView.swift in Sources */,
 				D8C4CA05284605B800A8F24F /* TimerLabelView.swift in Sources */,
 				D8C4CA1128460FE500A8F24F /* GameResultListView.swift in Sources */,
+				D83777302851BFF5003229A3 /* CalculatorView.swift in Sources */,
 				D8C4CA082846063D00A8F24F /* GameView.swift in Sources */,
 				D8C4CA0B284606C000A8F24F /* SampleTextView.swift in Sources */,
+				D837773D2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
