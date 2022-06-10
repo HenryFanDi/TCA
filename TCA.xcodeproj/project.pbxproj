@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D835801F2852E8EA00F04E84 /* AngelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835801E2852E8EA00F04E84 /* AngelView.swift */; };
+		D83580202852E8EA00F04E84 /* AngelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835801E2852E8EA00F04E84 /* AngelView.swift */; };
 		D83580232852ED2500F04E84 /* AngelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83580222852ED2500F04E84 /* AngelDetailView.swift */; };
 		D83580242852ED2500F04E84 /* AngelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83580222852ED2500F04E84 /* AngelDetailView.swift */; };
 		D83580262852EEA500F04E84 /* AngelDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83580252852EEA500F04E84 /* AngelDetail.swift */; };
 		D83580272852EEA500F04E84 /* AngelDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83580252852EEA500F04E84 /* AngelDetail.swift */; };
+		D8358029285321B100F04E84 /* AngelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8358028285321B100F04E84 /* AngelListView.swift */; };
+		D835802A285321B100F04E84 /* AngelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8358028285321B100F04E84 /* AngelListView.swift */; };
 		D835802C2853264500F04E84 /* AngelDetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835802B2853264500F04E84 /* AngelDetailListView.swift */; };
 		D835802D2853264500F04E84 /* AngelDetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835802B2853264500F04E84 /* AngelDetailListView.swift */; };
 		D835802E28532F9C00F04E84 /* Angel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85301892852E70E006F3EEE /* Angel.swift */; };
@@ -72,8 +76,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D835801E2852E8EA00F04E84 /* AngelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelView.swift; sourceTree = "<group>"; };
 		D83580222852ED2500F04E84 /* AngelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelDetailView.swift; sourceTree = "<group>"; };
 		D83580252852EEA500F04E84 /* AngelDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelDetail.swift; sourceTree = "<group>"; };
+		D8358028285321B100F04E84 /* AngelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelListView.swift; sourceTree = "<group>"; };
 		D835802B2853264500F04E84 /* AngelDetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelDetailListView.swift; sourceTree = "<group>"; };
 		D837772E2851BFF5003229A3 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		D83777322851C542003229A3 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
@@ -136,6 +142,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D835801D2852E8C700F04E84 /* Angel */ = {
+			isa = PBXGroup;
+			children = (
+				D835801E2852E8EA00F04E84 /* AngelView.swift */,
+				D8358028285321B100F04E84 /* AngelListView.swift */,
+			);
+			path = Angel;
+			sourceTree = "<group>";
+		};
 		D83580212852ED1300F04E84 /* AngelDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,10 +441,12 @@
 				D835802C2853264500F04E84 /* AngelDetailListView.swift in Sources */,
 				D837772F2851BFF5003229A3 /* CalculatorView.swift in Sources */,
 				D83580262852EEA500F04E84 /* AngelDetail.swift in Sources */,
+				D835801F2852E8EA00F04E84 /* AngelView.swift in Sources */,
 				D8C4CA072846063D00A8F24F /* GameView.swift in Sources */,
 				D8C4CA0A284606C000A8F24F /* SampleTextView.swift in Sources */,
 				D83580232852ED2500F04E84 /* AngelDetailView.swift in Sources */,
 				D837773C2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */,
+				D8358029285321B100F04E84 /* AngelListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,12 +459,14 @@
 				D83777372851C785003229A3 /* CalculatorButtonItem.swift in Sources */,
 				D83580242852ED2500F04E84 /* AngelDetailView.swift in Sources */,
 				D8C9906928377400000CB0D2 /* TCAApp.swift in Sources */,
+				D83580202852E8EA00F04E84 /* AngelView.swift in Sources */,
 				D837773A2851C9E1003229A3 /* CalculatorButtonRow.swift in Sources */,
 				D8C4CA022846052100A8F24F /* CounterView.swift in Sources */,
 				D8C4CA05284605B800A8F24F /* TimerLabelView.swift in Sources */,
 				D8C4CA1128460FE500A8F24F /* GameResultListView.swift in Sources */,
 				D83777302851BFF5003229A3 /* CalculatorView.swift in Sources */,
 				D83580272852EEA500F04E84 /* AngelDetail.swift in Sources */,
+				D835802A285321B100F04E84 /* AngelListView.swift in Sources */,
 				D8C4CA082846063D00A8F24F /* GameView.swift in Sources */,
 				D8C4CA0B284606C000A8F24F /* SampleTextView.swift in Sources */,
 				D835802D2853264500F04E84 /* AngelDetailListView.swift in Sources */,
