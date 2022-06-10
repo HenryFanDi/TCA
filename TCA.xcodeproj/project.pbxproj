@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D83580262852EEA500F04E84 /* AngelDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83580252852EEA500F04E84 /* AngelDetail.swift */; };
+		D83580272852EEA500F04E84 /* AngelDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83580252852EEA500F04E84 /* AngelDetail.swift */; };
+		D835802E28532F9C00F04E84 /* Angel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85301892852E70E006F3EEE /* Angel.swift */; };
 		D837772F2851BFF5003229A3 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837772E2851BFF5003229A3 /* CalculatorView.swift */; };
 		D83777302851BFF5003229A3 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837772E2851BFF5003229A3 /* CalculatorView.swift */; };
 		D83777332851C542003229A3 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83777322851C542003229A3 /* CalculatorButton.swift */; };
@@ -17,6 +20,7 @@
 		D837773A2851C9E1003229A3 /* CalculatorButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83777382851C9E1003229A3 /* CalculatorButtonRow.swift */; };
 		D837773C2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837773B2851CCBF003229A3 /* CalculatorButtonPad.swift */; };
 		D837773D2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837773B2851CCBF003229A3 /* CalculatorButtonPad.swift */; };
+		D853018A2852E70E006F3EEE /* Angel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85301892852E70E006F3EEE /* Angel.swift */; };
 		D8548327285201F8004474B0 /* angels.json in Resources */ = {isa = PBXBuildFile; fileRef = D8548326285201F8004474B0 /* angels.json */; };
 		D8548328285201F8004474B0 /* angels.json in Resources */ = {isa = PBXBuildFile; fileRef = D8548326285201F8004474B0 /* angels.json */; };
 		D854832B28520261004474B0 /* notes.json in Resources */ = {isa = PBXBuildFile; fileRef = D854832928520260004474B0 /* notes.json */; };
@@ -64,11 +68,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D83580252852EEA500F04E84 /* AngelDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelDetail.swift; sourceTree = "<group>"; };
 		D837772E2851BFF5003229A3 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		D83777322851C542003229A3 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		D83777352851C785003229A3 /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
 		D83777382851C9E1003229A3 /* CalculatorButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonRow.swift; sourceTree = "<group>"; };
 		D837773B2851CCBF003229A3 /* CalculatorButtonPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonPad.swift; sourceTree = "<group>"; };
+		D85301892852E70E006F3EEE /* Angel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angel.swift; sourceTree = "<group>"; };
 		D8548326285201F8004474B0 /* angels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = angels.json; sourceTree = "<group>"; };
 		D854832928520260004474B0 /* notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notes.json; sourceTree = "<group>"; };
 		D854832A28520260004474B0 /* impressions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = impressions.json; sourceTree = "<group>"; };
@@ -136,6 +142,15 @@
 			path = Calculator;
 			sourceTree = "<group>";
 		};
+		D85301882852E5D2006F3EEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D85301892852E70E006F3EEE /* Angel.swift */,
+				D83580252852EEA500F04E84 /* AngelDetail.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D8548325285201CB004474B0 /* Local Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +175,9 @@
 		D8C9903F283773FC000CB0D2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D85301882852E5D2006F3EEE /* Models */,
+				D835801D2852E8C700F04E84 /* Angel */,
+				D83580212852ED1300F04E84 /* AngelDetail */,
 				D83777312851C52D003229A3 /* Calculator */,
 				D8C99040283773FC000CB0D2 /* TCAApp.swift */,
 				D8C4CA002846052000A8F24F /* CounterView.swift */,
@@ -385,11 +403,13 @@
 				D83777332851C542003229A3 /* CalculatorButton.swift in Sources */,
 				D83777362851C785003229A3 /* CalculatorButtonItem.swift in Sources */,
 				D8C9906828377400000CB0D2 /* TCAApp.swift in Sources */,
+				D853018A2852E70E006F3EEE /* Angel.swift in Sources */,
 				D83777392851C9E1003229A3 /* CalculatorButtonRow.swift in Sources */,
 				D8C4CA012846052100A8F24F /* CounterView.swift in Sources */,
 				D8C4CA04284605B800A8F24F /* TimerLabelView.swift in Sources */,
 				D8C4CA1028460FE500A8F24F /* GameResultListView.swift in Sources */,
 				D837772F2851BFF5003229A3 /* CalculatorView.swift in Sources */,
+				D83580262852EEA500F04E84 /* AngelDetail.swift in Sources */,
 				D8C4CA072846063D00A8F24F /* GameView.swift in Sources */,
 				D8C4CA0A284606C000A8F24F /* SampleTextView.swift in Sources */,
 				D837773C2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */,
@@ -409,9 +429,11 @@
 				D8C4CA05284605B800A8F24F /* TimerLabelView.swift in Sources */,
 				D8C4CA1128460FE500A8F24F /* GameResultListView.swift in Sources */,
 				D83777302851BFF5003229A3 /* CalculatorView.swift in Sources */,
+				D83580272852EEA500F04E84 /* AngelDetail.swift in Sources */,
 				D8C4CA082846063D00A8F24F /* GameView.swift in Sources */,
 				D8C4CA0B284606C000A8F24F /* SampleTextView.swift in Sources */,
 				D837773D2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */,
+				D835802E28532F9C00F04E84 /* Angel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
