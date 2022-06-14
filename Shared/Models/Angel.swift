@@ -13,7 +13,7 @@ struct Angel: Codable, Identifiable {
     let level: String
     let name: String
     let period: String
-    let type: Int
+    let type: AngelType
     let updatedAt: String
     
     enum CodingKeys: CodingKey {
@@ -32,7 +32,7 @@ struct Angel: Codable, Identifiable {
         level: String = "",
         name: String = "",
         period: String = "",
-        type: Int = 1,
+        type: AngelType = .angel,
         updatedAt: String = ""
     ) {
         self.aid = aid
@@ -52,7 +52,7 @@ struct Angel: Codable, Identifiable {
         self.level = try container.decode(String.self, forKey: Angel.CodingKeys.level)
         self.name = try container.decode(String.self, forKey: Angel.CodingKeys.name)
         self.period = try container.decode(String.self, forKey: Angel.CodingKeys.period)
-        self.type = try container.decode(Int.self, forKey: Angel.CodingKeys.type)
+        self.type = try container.decode(AngelType.self, forKey: Angel.CodingKeys.type)
         self.updatedAt = try container.decode(String.self, forKey: Angel.CodingKeys.updatedAt)
     }
     

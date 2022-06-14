@@ -28,7 +28,7 @@ struct AngelDetailView_Previews: PreviewProvider {
     
     static var previews: some View {
         AngelDetailView(
-            angel: Angel(level: "CP", name: "學姊", type: 1),
+            angel: Angel(level: "CP", name: "學姊", type: .angel),
             angelDetails: [
                 AngelDetail(content: "天使！"),
                 AngelDetail(content: "天使！"),

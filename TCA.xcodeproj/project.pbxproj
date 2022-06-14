@@ -56,6 +56,8 @@
 		D8C9906C28377400000CB0D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C99042283773FF000CB0D2 /* Assets.xcassets */; };
 		D8C9906D28377400000CB0D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C99042283773FF000CB0D2 /* Assets.xcassets */; };
 		D8C9907E28377455000CB0D2 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D8C9907D28377455000CB0D2 /* ComposableArchitecture */; };
+		D8D75BEB2858303C004BFEB7 /* AngelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D75BEA2858303C004BFEB7 /* AngelType.swift */; };
+		D8D75BEC2858303C004BFEB7 /* AngelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D75BEA2858303C004BFEB7 /* AngelType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,7 @@
 		D8C9906028377400000CB0D2 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C9906428377400000CB0D2 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		D8C9906628377400000CB0D2 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		D8D75BEA2858303C004BFEB7 /* AngelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				D85301892852E70E006F3EEE /* Angel.swift */,
+				D8D75BEA2858303C004BFEB7 /* AngelType.swift */,
 				D83580252852EEA500F04E84 /* AngelDetail.swift */,
 			);
 			path = Models;
@@ -441,6 +445,7 @@
 				D835802C2853264500F04E84 /* AngelDetailListView.swift in Sources */,
 				D837772F2851BFF5003229A3 /* CalculatorView.swift in Sources */,
 				D83580262852EEA500F04E84 /* AngelDetail.swift in Sources */,
+				D8D75BEB2858303C004BFEB7 /* AngelType.swift in Sources */,
 				D835801F2852E8EA00F04E84 /* AngelView.swift in Sources */,
 				D8C4CA072846063D00A8F24F /* GameView.swift in Sources */,
 				D8C4CA0A284606C000A8F24F /* SampleTextView.swift in Sources */,
@@ -466,6 +471,7 @@
 				D8C4CA1128460FE500A8F24F /* GameResultListView.swift in Sources */,
 				D83777302851BFF5003229A3 /* CalculatorView.swift in Sources */,
 				D83580272852EEA500F04E84 /* AngelDetail.swift in Sources */,
+				D8D75BEC2858303C004BFEB7 /* AngelType.swift in Sources */,
 				D835802A285321B100F04E84 /* AngelListView.swift in Sources */,
 				D8C4CA082846063D00A8F24F /* GameView.swift in Sources */,
 				D8C4CA0B284606C000A8F24F /* SampleTextView.swift in Sources */,
