@@ -20,8 +20,8 @@
         }
       ],
       "color" : {
-        "platform" : "universal",
-        "reference" : "tertiaryLabelColor"
+        "platform" : "ios",
+        "reference" : "systemGray3Color"
       },
       "idiom" : "universal"
     }

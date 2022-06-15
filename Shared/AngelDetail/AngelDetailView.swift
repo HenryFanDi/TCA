@@ -15,12 +15,17 @@ struct AngelDetailView: View {
     
     var body: some View {
         VStack {
-            Text(angel.name)
-                .font(.title)
+            AngelListView(angel: angel)
+                .padding([.leading, .trailing], 16)
+            
             List(angelDetails) { angelDetail in
                 AngelDetailListView(angelDetail: angelDetail)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.angelBackground)
             }
         }
+        .listStyle(.plain)
+        .background(Color.angelBackground)
     }
 }
 
@@ -31,8 +36,10 @@ struct AngelDetailView_Previews: PreviewProvider {
             angel: Angel(level: "CP", name: "學姊", type: .angel),
             angelDetails: [
                 AngelDetail(content: "天使！"),
-                AngelDetail(content: "天使！"),
-                AngelDetail(content: "天使！")
+                AngelDetail(content: "天使！天使！"),
+                AngelDetail(content: "天使！天使！天使！"),
+                AngelDetail(content: "天使！天使！天使！天使！"),
+                AngelDetail(content: "天使！天使！天使！天使！天使！")
             ]
         )
     }

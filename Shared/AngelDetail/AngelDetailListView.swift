@@ -12,13 +12,22 @@ struct AngelDetailListView: View {
     let angelDetail: AngelDetail
     
     var body: some View {
-        HStack {
-            Text(angelDetail.content)
-                .font(.title)
-                .fontWeight(.heavy)
-                .foregroundColor(Color.gray)
-            Spacer()
+        HStack(alignment: .bottom, spacing: 0) {
+            Image("bubble_arrow")
+                .padding(.bottom, -6)
+                .padding(.trailing, -18)
+                .foregroundColor(Color.angelListBackground)
+            
+            HStack {
+                Text(angelDetail.content)
+                    .font(Font.Lato.regular(size: 18))
+                    .foregroundColor(Color.angelListSubTitle)
+            }
+            .padding()
+            .background(Color.angelListBackground)
+            .cornerRadius(16)
         }
+        .padding(.leading, -8)
     }
 }
 
