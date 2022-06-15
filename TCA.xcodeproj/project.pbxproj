@@ -80,6 +80,8 @@
 		D8E37CEF28587B5B0032C9DD /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8E37CDB28587B5B0032C9DD /* Lato-Bold.ttf */; };
 		D8E37CF4285883450032C9DD /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E37CF3285883450032C9DD /* FontExtension.swift */; };
 		D8E37CF5285883450032C9DD /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E37CF3285883450032C9DD /* FontExtension.swift */; };
+		D8E37CF728588A360032C9DD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E37CF628588A360032C9DD /* ColorExtension.swift */; };
+		D8E37CF828588A360032C9DD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E37CF628588A360032C9DD /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,7 @@
 		D8E37CDB28587B5B0032C9DD /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		D8E37CF128587F250032C9DD /* TCA--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TCA--iOS--Info.plist"; sourceTree = "<group>"; };
 		D8E37CF3285883450032C9DD /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		D8E37CF628588A360032C9DD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				D8E37CF3285883450032C9DD /* FontExtension.swift */,
+				D8E37CF628588A360032C9DD /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -527,6 +531,7 @@
 				D8C4CA1028460FE500A8F24F /* GameResultListView.swift in Sources */,
 				D835802C2853264500F04E84 /* AngelDetailListView.swift in Sources */,
 				D837772F2851BFF5003229A3 /* CalculatorView.swift in Sources */,
+				D8E37CF728588A360032C9DD /* ColorExtension.swift in Sources */,
 				D83580262852EEA500F04E84 /* AngelDetail.swift in Sources */,
 				D8D75BEB2858303C004BFEB7 /* AngelType.swift in Sources */,
 				D835801F2852E8EA00F04E84 /* AngelView.swift in Sources */,
@@ -554,6 +559,7 @@
 				D8C4CA05284605B800A8F24F /* TimerLabelView.swift in Sources */,
 				D8C4CA1128460FE500A8F24F /* GameResultListView.swift in Sources */,
 				D83777302851BFF5003229A3 /* CalculatorView.swift in Sources */,
+				D8E37CF828588A360032C9DD /* ColorExtension.swift in Sources */,
 				D83580272852EEA500F04E84 /* AngelDetail.swift in Sources */,
 				D8D75BEC2858303C004BFEB7 /* AngelType.swift in Sources */,
 				D835802A285321B100F04E84 /* AngelListView.swift in Sources */,

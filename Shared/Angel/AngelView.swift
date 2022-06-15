@@ -50,18 +50,33 @@ struct AngelView: View {
         }
     }
     
+    init() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundEffect = UIBlurEffect(style: .regular)
+        UINavigationBar.appearance().standardAppearance = appearance
+    }
+    
     var body: some View {
         NavigationView {
-            List {
-                ForEach(searchResults) { angel in
-                    NavigationLink(destination: AngelDetailView(
-                        angel: angel,
-                        angelDetails: datas.angelDetails.filter { $0.aid == angel.aid })
-                    ) {
-                        AngelListView(angel: angel)
-                    }
-                }
+            List(searchResults) { angel in
+                let detailView = AngelDetailView(
+                    angel: angel,
+                    angelDetails: datas.angelDetails.filter { $0.aid == angel.aid }
+                )
+                AngelListView(angel: angel)
+                    .overlay(
+                        NavigationLink(
+                            destination: detailView,
+                            label: { EmptyView() }
+                        )
+                        .opacity(0)
+                    )
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.angelBackground)
             }
+            .listStyle(.plain)
+            .background(Color.angelBackground)
+            .navigationTitle("聊名單")
             .searchable(text: $searchText)
         }
     }
@@ -70,6 +85,10 @@ struct AngelView: View {
 struct AngelView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AngelView()
+        Group {
+            AngelView()
+            AngelView()
+                .preferredColorScheme(.dark)
+        }
     }
 }
