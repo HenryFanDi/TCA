@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D831AE69285B813E00BAC39E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D831AE68285B813E00BAC39E /* DateExtension.swift */; };
+		D831AE6A285B813E00BAC39E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D831AE68285B813E00BAC39E /* DateExtension.swift */; };
 		D835801F2852E8EA00F04E84 /* AngelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835801E2852E8EA00F04E84 /* AngelView.swift */; };
 		D83580202852E8EA00F04E84 /* AngelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835801E2852E8EA00F04E84 /* AngelView.swift */; };
 		D83580232852ED2500F04E84 /* AngelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83580222852ED2500F04E84 /* AngelDetailView.swift */; };
@@ -102,6 +104,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D831AE68285B813E00BAC39E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		D835801E2852E8EA00F04E84 /* AngelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelView.swift; sourceTree = "<group>"; };
 		D83580222852ED2500F04E84 /* AngelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelDetailView.swift; sourceTree = "<group>"; };
 		D83580252852EEA500F04E84 /* AngelDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelDetail.swift; sourceTree = "<group>"; };
@@ -325,6 +328,7 @@
 			children = (
 				D8E37CF3285883450032C9DD /* FontExtension.swift */,
 				D8E37CF628588A360032C9DD /* ColorExtension.swift */,
+				D831AE68285B813E00BAC39E /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,6 +540,7 @@
 				D8D75BEB2858303C004BFEB7 /* AngelType.swift in Sources */,
 				D835801F2852E8EA00F04E84 /* AngelView.swift in Sources */,
 				D8C4CA072846063D00A8F24F /* GameView.swift in Sources */,
+				D831AE69285B813E00BAC39E /* DateExtension.swift in Sources */,
 				D8C4CA0A284606C000A8F24F /* SampleTextView.swift in Sources */,
 				D83580232852ED2500F04E84 /* AngelDetailView.swift in Sources */,
 				D837773C2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */,
@@ -564,6 +569,7 @@
 				D8D75BEC2858303C004BFEB7 /* AngelType.swift in Sources */,
 				D835802A285321B100F04E84 /* AngelListView.swift in Sources */,
 				D8C4CA082846063D00A8F24F /* GameView.swift in Sources */,
+				D831AE6A285B813E00BAC39E /* DateExtension.swift in Sources */,
 				D8C4CA0B284606C000A8F24F /* SampleTextView.swift in Sources */,
 				D835802D2853264500F04E84 /* AngelDetailListView.swift in Sources */,
 				D837773D2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */,

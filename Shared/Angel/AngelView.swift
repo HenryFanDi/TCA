@@ -43,11 +43,13 @@ struct AngelView: View {
     @State private var searchText = ""
     
     var searchResults: [Angel] {
+        var angels: [Angel]
         if searchText.isEmpty {
-            return datas.angels
+            angels = datas.angels
         } else {
-            return datas.angels.filter { $0.name.contains(searchText) }
+            angels = datas.angels.filter { $0.name.contains(searchText) }
         }
+        return angels.sorted { $0.updatedAt > $1.updatedAt }
     }
     
     init() {
@@ -61,7 +63,9 @@ struct AngelView: View {
             List(searchResults) { angel in
                 let detailView = AngelDetailView(
                     angel: angel,
-                    angelDetails: datas.angelDetails.filter { $0.aid == angel.aid }
+                    angelDetails: datas.angelDetails
+                        .filter { $0.aid == angel.aid }
+                        .sorted { $0.updatedAt > $1.updatedAt }
                 )
                 AngelListView(angel: angel)
                     .overlay(

@@ -18,10 +18,17 @@ struct AngelDetailListView: View {
                 .padding(.trailing, -18)
                 .foregroundColor(Color.angelListBackground)
             
-            HStack {
+            VStack(alignment: .leading, spacing: 16) {
                 Text(angelDetail.content)
                     .font(Font.Lato.regular(size: 18))
                     .foregroundColor(Color.angelListSubTitle)
+                
+                HStack {
+                    Spacer()
+                    Text(angelDetail.updatedAt.dateToString())
+                        .font(Font.Lato.regular(size: 12))
+                        .foregroundColor(Color.angelListSubTitle)
+                }
             }
             .padding()
             .background(Color.angelListBackground)

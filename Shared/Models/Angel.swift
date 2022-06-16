@@ -14,7 +14,7 @@ struct Angel: Codable, Identifiable {
     let name: String
     let period: String
     let type: AngelType
-    let updatedAt: String
+    let updatedAt: Date
     
     enum CodingKeys: CodingKey {
         case aid
@@ -33,7 +33,7 @@ struct Angel: Codable, Identifiable {
         name: String = "",
         period: String = "",
         type: AngelType = .angel,
-        updatedAt: String = ""
+        updatedAt: Date = .init()
     ) {
         self.aid = aid
         self.level = level
@@ -53,7 +53,19 @@ struct Angel: Codable, Identifiable {
         self.name = try container.decode(String.self, forKey: Angel.CodingKeys.name)
         self.period = try container.decode(String.self, forKey: Angel.CodingKeys.period)
         self.type = try container.decode(AngelType.self, forKey: Angel.CodingKeys.type)
-        self.updatedAt = try container.decode(String.self, forKey: Angel.CodingKeys.updatedAt)
+        
+        let dateString = try container.decode(String.self, forKey: Angel.CodingKeys.updatedAt)
+        let dateFormatter = ISO8601DateFormatter()
+        dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        if let date = dateFormatter.date(from: dateString) {
+            self.updatedAt = date
+        } else {
+            throw DecodingError.dataCorrupted(.init(
+                codingPath: [CodingKeys.updatedAt],
+                debugDescription: "unable to convert date string to Date object. Format not recognised",
+                underlyingError: nil)
+            )
+        }
     }
     
     // MARK: - Encoder
