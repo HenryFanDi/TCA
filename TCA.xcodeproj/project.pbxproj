@@ -9,6 +9,23 @@
 /* Begin PBXBuildFile section */
 		D831AE69285B813E00BAC39E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D831AE68285B813E00BAC39E /* DateExtension.swift */; };
 		D831AE6A285B813E00BAC39E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D831AE68285B813E00BAC39E /* DateExtension.swift */; };
+		D831AE74285CC4D400BAC39E /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE6D285CC4D400BAC39E /* house.riv */; };
+		D831AE75285CC4D400BAC39E /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE6D285CC4D400BAC39E /* house.riv */; };
+		D831AE76285CC4D400BAC39E /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE6E285CC4D400BAC39E /* confetti.riv */; };
+		D831AE77285CC4D400BAC39E /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE6E285CC4D400BAC39E /* confetti.riv */; };
+		D831AE78285CC4D400BAC39E /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE6F285CC4D400BAC39E /* check.riv */; };
+		D831AE79285CC4D400BAC39E /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE6F285CC4D400BAC39E /* check.riv */; };
+		D831AE7A285CC4D400BAC39E /* menu_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE70285CC4D400BAC39E /* menu_button.riv */; };
+		D831AE7B285CC4D400BAC39E /* menu_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE70285CC4D400BAC39E /* menu_button.riv */; };
+		D831AE7C285CC4D400BAC39E /* shapes.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE71285CC4D400BAC39E /* shapes.riv */; };
+		D831AE7D285CC4D400BAC39E /* shapes.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE71285CC4D400BAC39E /* shapes.riv */; };
+		D831AE7E285CC4D400BAC39E /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE72285CC4D400BAC39E /* button.riv */; };
+		D831AE7F285CC4D400BAC39E /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE72285CC4D400BAC39E /* button.riv */; };
+		D831AE80285CC4D400BAC39E /* icons.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE73285CC4D400BAC39E /* icons.riv */; };
+		D831AE81285CC4D400BAC39E /* icons.riv in Resources */ = {isa = PBXBuildFile; fileRef = D831AE73285CC4D400BAC39E /* icons.riv */; };
+		D831AE84285CC51800BAC39E /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = D831AE83285CC51800BAC39E /* RiveRuntime */; };
+		D831AE87285CC58600BAC39E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D831AE86285CC58600BAC39E /* OnboardingView.swift */; };
+		D831AE88285CC58600BAC39E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D831AE86285CC58600BAC39E /* OnboardingView.swift */; };
 		D835801F2852E8EA00F04E84 /* AngelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835801E2852E8EA00F04E84 /* AngelView.swift */; };
 		D83580202852E8EA00F04E84 /* AngelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835801E2852E8EA00F04E84 /* AngelView.swift */; };
 		D83580232852ED2500F04E84 /* AngelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83580222852ED2500F04E84 /* AngelDetailView.swift */; };
@@ -105,6 +122,14 @@
 
 /* Begin PBXFileReference section */
 		D831AE68285B813E00BAC39E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		D831AE6D285CC4D400BAC39E /* house.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = house.riv; sourceTree = "<group>"; };
+		D831AE6E285CC4D400BAC39E /* confetti.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = confetti.riv; sourceTree = "<group>"; };
+		D831AE6F285CC4D400BAC39E /* check.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = check.riv; sourceTree = "<group>"; };
+		D831AE70285CC4D400BAC39E /* menu_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_button.riv; sourceTree = "<group>"; };
+		D831AE71285CC4D400BAC39E /* shapes.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shapes.riv; sourceTree = "<group>"; };
+		D831AE72285CC4D400BAC39E /* button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.riv; sourceTree = "<group>"; };
+		D831AE73285CC4D400BAC39E /* icons.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = icons.riv; sourceTree = "<group>"; };
+		D831AE86285CC58600BAC39E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		D835801E2852E8EA00F04E84 /* AngelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelView.swift; sourceTree = "<group>"; };
 		D83580222852ED2500F04E84 /* AngelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelDetailView.swift; sourceTree = "<group>"; };
 		D83580252852EEA500F04E84 /* AngelDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngelDetail.swift; sourceTree = "<group>"; };
@@ -158,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E37D01285B7C0D0032C9DD /* ComposableArchitecture in Frameworks */,
+				D831AE84285CC51800BAC39E /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +211,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D831AE6C285CC4D400BAC39E /* RiveAssets */ = {
+			isa = PBXGroup;
+			children = (
+				D831AE6D285CC4D400BAC39E /* house.riv */,
+				D831AE6E285CC4D400BAC39E /* confetti.riv */,
+				D831AE6F285CC4D400BAC39E /* check.riv */,
+				D831AE70285CC4D400BAC39E /* menu_button.riv */,
+				D831AE71285CC4D400BAC39E /* shapes.riv */,
+				D831AE72285CC4D400BAC39E /* button.riv */,
+				D831AE73285CC4D400BAC39E /* icons.riv */,
+			);
+			path = RiveAssets;
+			sourceTree = "<group>";
+		};
+		D831AE85285CC54200BAC39E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D831AE86285CC58600BAC39E /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		D835801D2852E8C700F04E84 /* Angel */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +300,7 @@
 			children = (
 				D8E37CF22858832E0032C9DD /* Extensions */,
 				D85301882852E5D2006F3EEE /* Models */,
+				D831AE85285CC54200BAC39E /* Onboarding */,
 				D835801D2852E8C700F04E84 /* Angel */,
 				D83580212852ED1300F04E84 /* AngelDetail */,
 				D83777312851C52D003229A3 /* Calculator */,
@@ -263,6 +312,7 @@
 				D8C4CA09284606C000A8F24F /* SampleTextView.swift */,
 				D8C4CA0C2846071000A8F24F /* MyView.swift */,
 				D8C99042283773FF000CB0D2 /* Assets.xcassets */,
+				D831AE6C285CC4D400BAC39E /* RiveAssets */,
 				D8E37CD128587B320032C9DD /* Fonts */,
 				D8548325285201CB004474B0 /* Local Files */,
 			);
@@ -351,6 +401,7 @@
 			name = "TCA (iOS)";
 			packageProductDependencies = (
 				D8E37D00285B7C0D0032C9DD /* ComposableArchitecture */,
+				D831AE83285CC51800BAC39E /* RiveRuntime */,
 			);
 			productName = "TCA (iOS)";
 			productReference = D8C99047283773FF000CB0D2 /* TCA.app */;
@@ -446,6 +497,7 @@
 			mainGroup = D8C9903A283773FB000CB0D2;
 			packageReferences = (
 				D8E37CFF285B7C0D0032C9DD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				D831AE82285CC51800BAC39E /* XCRemoteSwiftPackageReference "rive-ios" */,
 			);
 			productRefGroup = D8C99048283773FF000CB0D2 /* Products */;
 			projectDirPath = "";
@@ -465,17 +517,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E37CE228587B5B0032C9DD /* Lato-BlackItalic.ttf in Resources */,
+				D831AE7E285CC4D400BAC39E /* button.riv in Resources */,
+				D831AE80285CC4D400BAC39E /* icons.riv in Resources */,
+				D831AE74285CC4D400BAC39E /* house.riv in Resources */,
 				D8E37CE428587B5B0032C9DD /* Lato-ThinItalic.ttf in Resources */,
+				D831AE7C285CC4D400BAC39E /* shapes.riv in Resources */,
 				D854832D28520261004474B0 /* impressions.json in Resources */,
 				D8E37CDC28587B5B0032C9DD /* Lato-LightItalic.ttf in Resources */,
 				D8E37CE028587B5B0032C9DD /* Lato-Thin.ttf in Resources */,
 				D8E37CE628587B5B0032C9DD /* Lato-Light.ttf in Resources */,
+				D831AE76285CC4D400BAC39E /* confetti.riv in Resources */,
+				D831AE7A285CC4D400BAC39E /* menu_button.riv in Resources */,
 				D8E37CE828587B5B0032C9DD /* Lato-Black.ttf in Resources */,
 				D8E37CEE28587B5B0032C9DD /* Lato-Bold.ttf in Resources */,
 				D8E37CEA28587B5B0032C9DD /* Lato-Regular.ttf in Resources */,
 				D8C9906C28377400000CB0D2 /* Assets.xcassets in Resources */,
 				D8548327285201F8004474B0 /* angels.json in Resources */,
 				D8E37CDE28587B5B0032C9DD /* Lato-Italic.ttf in Resources */,
+				D831AE78285CC4D400BAC39E /* check.riv in Resources */,
 				D854832B28520261004474B0 /* notes.json in Resources */,
 				D8E37CEC28587B5B0032C9DD /* Lato-BoldItalic.ttf in Resources */,
 			);
@@ -486,17 +545,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E37CE328587B5B0032C9DD /* Lato-BlackItalic.ttf in Resources */,
+				D831AE7F285CC4D400BAC39E /* button.riv in Resources */,
+				D831AE81285CC4D400BAC39E /* icons.riv in Resources */,
+				D831AE75285CC4D400BAC39E /* house.riv in Resources */,
 				D8E37CE528587B5B0032C9DD /* Lato-ThinItalic.ttf in Resources */,
+				D831AE7D285CC4D400BAC39E /* shapes.riv in Resources */,
 				D854832E28520261004474B0 /* impressions.json in Resources */,
 				D8E37CDD28587B5B0032C9DD /* Lato-LightItalic.ttf in Resources */,
 				D8E37CE128587B5B0032C9DD /* Lato-Thin.ttf in Resources */,
 				D8E37CE728587B5B0032C9DD /* Lato-Light.ttf in Resources */,
+				D831AE77285CC4D400BAC39E /* confetti.riv in Resources */,
+				D831AE7B285CC4D400BAC39E /* menu_button.riv in Resources */,
 				D8E37CE928587B5B0032C9DD /* Lato-Black.ttf in Resources */,
 				D8E37CEF28587B5B0032C9DD /* Lato-Bold.ttf in Resources */,
 				D8E37CEB28587B5B0032C9DD /* Lato-Regular.ttf in Resources */,
 				D8C9906D28377400000CB0D2 /* Assets.xcassets in Resources */,
 				D8548328285201F8004474B0 /* angels.json in Resources */,
 				D8E37CDF28587B5B0032C9DD /* Lato-Italic.ttf in Resources */,
+				D831AE79285CC4D400BAC39E /* check.riv in Resources */,
 				D854832C28520261004474B0 /* notes.json in Resources */,
 				D8E37CED28587B5B0032C9DD /* Lato-BoldItalic.ttf in Resources */,
 			);
@@ -544,6 +610,7 @@
 				D8C4CA0A284606C000A8F24F /* SampleTextView.swift in Sources */,
 				D83580232852ED2500F04E84 /* AngelDetailView.swift in Sources */,
 				D837773C2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */,
+				D831AE87285CC58600BAC39E /* OnboardingView.swift in Sources */,
 				D8358029285321B100F04E84 /* AngelListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +640,7 @@
 				D8C4CA0B284606C000A8F24F /* SampleTextView.swift in Sources */,
 				D835802D2853264500F04E84 /* AngelDetailListView.swift in Sources */,
 				D837773D2851CCBF003229A3 /* CalculatorButtonPad.swift in Sources */,
+				D831AE88285CC58600BAC39E /* OnboardingView.swift in Sources */,
 				D835802E28532F9C00F04E84 /* Angel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -969,6 +1037,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D831AE82285CC51800BAC39E /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		D8E37CFF285B7C0D0032C9DD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -980,6 +1056,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D831AE83285CC51800BAC39E /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D831AE82285CC51800BAC39E /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
 		D8E37D00285B7C0D0032C9DD /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D8E37CFF285B7C0D0032C9DD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

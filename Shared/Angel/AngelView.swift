@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RiveRuntime
 
 class ReadData: ObservableObject {
     
@@ -60,28 +61,39 @@ struct AngelView: View {
     
     var body: some View {
         NavigationView {
-            List(searchResults) { angel in
-                let detailView = AngelDetailView(
-                    angel: angel,
-                    angelDetails: datas.angelDetails
-                        .filter { $0.aid == angel.aid }
-                        .sorted { $0.updatedAt > $1.updatedAt }
-                )
-                AngelListView(angel: angel)
-                    .overlay(
-                        NavigationLink(
-                            destination: detailView,
-                            label: { EmptyView() }
-                        )
-                        .opacity(0)
+            ZStack {
+                RiveViewModel(fileName: "shapes").view()
+                    .ignoresSafeArea()
+                    .blur(radius: 30)
+                    .background(
+                        Image("Spline")
+                            .blur(radius: 50)
+                            .offset(x: 200, y: 100)
                     )
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.angelBackground)
+                
+                List(searchResults) { angel in
+                    let detailView = AngelDetailView(
+                        angel: angel,
+                        angelDetails: datas.angelDetails
+                            .filter { $0.aid == angel.aid }
+                            .sorted { $0.updatedAt > $1.updatedAt }
+                    )
+                    AngelListView(angel: angel)
+                        .overlay(
+                            NavigationLink(
+                                destination: detailView,
+                                label: { EmptyView() }
+                            )
+                            .opacity(0)
+                        )
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                }
+                .listStyle(.plain)
+                .background(Color.clear)
+                .navigationTitle("聊名單")
+                .searchable(text: $searchText)
             }
-            .listStyle(.plain)
-            .background(Color.angelBackground)
-            .navigationTitle("聊名單")
-            .searchable(text: $searchText)
         }
     }
 }
@@ -90,7 +102,7 @@ struct AngelView_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            AngelView()
+//            AngelView()
             AngelView()
                 .preferredColorScheme(.dark)
         }
