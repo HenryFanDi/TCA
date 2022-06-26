@@ -48,7 +48,12 @@ struct AngelView: View {
         if searchText.isEmpty {
             angels = datas.angels
         } else {
-            angels = datas.angels.filter { $0.name.contains(searchText) }
+            let searchTextUppercased = searchText.uppercased()
+            angels = datas.angels.filter {
+                $0.name.uppercased().contains(searchTextUppercased) ||
+                $0.level.uppercased().contains(searchTextUppercased) ||
+                $0.period.uppercased().contains(searchTextUppercased)
+            }
         }
         return angels.sorted { $0.updatedAt > $1.updatedAt }
     }
